@@ -146,69 +146,6 @@ extern "C" {
         return NULL;
     }
 
-    void*
-    rb_request_empty_ptr(ring_t* rb, unsigned int size)
-    {
-        return NULL;
-
-        //if (rb == NULL || rb->buffer == NULL || size <= 0 )
-        //{
-        //    LOG_PRINT("rb_request_empty_ptr: Pointer to write is null\n");
-        //    return NULL;
-        //}
-        //if (1 == rb->full)
-        //{
-        //    LOG_PRINT("rb_request_empty_ptr: Pointer to write is full\n");
-        //    return NULL;
-        //}
-        //else
-        //{
-        //   /* rb->buffer[rb->head]->ptr_size = size;
-        //    void* req_ptr = rb->buffer[rb->head];*/
-
-        //    //pthread_mutex_lock(&(rb->mtx));
-        //    //rb->mtx.lock();
-
-        //    //rb->head++;
-        //    rb->empty = 0;
-
-        //    //pthread_mutex_unlock(&(rb->mtx));
-        //    //rb->mtx.unlock();
-
-        //    return NULL;//req_ptr;
-        //}
-    }
-
-    void*
-        rb_request_filled_ptr(ring_t* rb, unsigned int *size)
-    {
-        return NULL;
-        //if (rb == NULL || rb->buffer == NULL || *size <= 0 )
-        //{
-        //    LOG_PRINT("\nrb_request_filled_ptr: Pointer to write is null\n");
-        //    return NULL;
-        //}
-        //else if (1 == rb->empty)
-        //{
-        //    LOG_PRINT("\nrb_request_filled_ptr: Pointer to read is full\n");
-        //    return NULL;
-        //}
-
-        //////rb->mtx.lock();
-        ////*size = rb->buffer[rb->tail]->ptr_size;
-        ////void* ptr_pos = rb->buffer[rb->tail]->data;
-
-        //rb->full = 0;
-        //rb->tail++;
-
-        //    
-        ////pthread_mutex_unlock(&(rb->mtx));
-        ////rb->mtx.unlock();
-
-        //return NULL;// ptr_pos;//do not free this, work with it fast do a cpy if buffer is small
-
-    }
-
     uint32_t
     rb_free_space(ring_t * rb)
     {
@@ -234,7 +171,7 @@ extern "C" {
             return 0;
         if (rb->round_complete == 1)
         {
-                                    //end part of the buffer               //the initial part of the buffer
+            //end part of the buffer               //the initial part of the buffer
             uint32_t filled_space = ( (rb->buffer_end -  rb->tail)  +  ( rb->head - rb->tail) );//later do a direct return
             return filled_space;
         }
