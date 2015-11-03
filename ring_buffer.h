@@ -30,6 +30,10 @@ extern "C"
 
     uint32_t 	rb_read(ring_t* rb, uint32_t *size, uint8_t* memory);
 
+    uint32_t 	rb_free_space(ring_t * rb);
+
+    uint32_t 	rb_filled_space(ring_t * rb);
+
     void	rb_release(ring_t * rb);
 
 }
