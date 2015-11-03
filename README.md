@@ -2,4 +2,4 @@
 Ringbuffer
 
 
-I am still finishing this
+Still underconstruction, and debugging.
