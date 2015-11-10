@@ -22,7 +22,7 @@ uint32_t rb_full(ring_t* rb);
 
 uint32_t rb_empty(ring_t* rb);
 
-uint32_t rb_write(ring_t* rb, uint8_t *data, uint32_t size);//avpacket
+uint32_t rb_write(ring_t* rb, uint8_t *data, uint32_t size);
 
 uint32_t 	rb_read(ring_t* rb, uint32_t *size, uint8_t* memory);
 
