@@ -13,7 +13,7 @@ typedef struct ring_t           //some padding should be taking into considerati
     char round_complete;        //0- false; 1- true
 }ring_t;
 
-ring_t* rb_new(uint32_t buffer_len, uint32_t pointer_size);
+ring_t* rb_new(uint32_t buffer_len);
 
 uint32_t rb_full(ring_t* rb);
 
