@@ -119,7 +119,7 @@ rb_read(ring_t* rb, uint32_t *size, uint8_t* memory)
             rb->tail = rb->buffer_start;
             rb->round_complete = 0;
         }
-        return NULL;
+        return 0;
     }
     else if (available_space < rb->size)
     {
@@ -134,7 +134,7 @@ rb_read(ring_t* rb, uint32_t *size, uint8_t* memory)
                 rb->tail = rb->buffer_start;
                 rb->round_complete = 0;
             }
-            return 0;
+            return *size;
         }
         else
         {
