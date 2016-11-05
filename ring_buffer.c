@@ -4,6 +4,9 @@
 #include "ring_buffer.h"
 #define LOG_PRINT printf
 
+#ifdef __cplusplus
+extern "C" {
+#endif
 
 //buffern len is the number of pointers we want allocate, the ptr size is the maximum size of each ptr.
 ring_t*
@@ -198,3 +201,10 @@ rb_release(ring_t * rb)
 
     free(rb);
 }
+
+#ifdef __cplusplus
+}
+#endif
+
+    
+    
