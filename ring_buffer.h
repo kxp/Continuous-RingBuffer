@@ -1,5 +1,9 @@
 #include <stdint.h>
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 typedef struct ring_t           //some padding should be taking into consideration.
 {
     uint8_t *buffer_start;      //ptr to the start address
@@ -28,6 +32,10 @@ uint32_t rb_free_space(ring_t * rb);
 //uint32_t rb_filled_space(ring_t * rb);
 
 void rb_release(ring_t * rb);
+
+#ifdef __cplusplus
+}
+#endif
 
 
 
