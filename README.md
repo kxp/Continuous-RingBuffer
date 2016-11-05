@@ -1,5 +1,4 @@
 # Continuous RingBuffer
 Ringbuffer
 
-
-Still underconstruction, and debugging.
+Fell free to use and report issues.
